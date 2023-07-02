@@ -1,0 +1,295 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-Assignment</title>
+    <h>JAVA Script Assignment (inspect element concole)</h>
+</head>
+<body>
+    <script>
+        /*hello world */
+        console.log("Hello World")
+        /*Adding Two numbers  */
+        console.log(2+3)
+
+        /*Calculate The Area of a Trainagle */
+        function calculateTriangleArea(base, height) {
+        var area = (base * height) / 2;
+        return area;
+        }
+        var base = 5;
+        var height = 8;
+        var triangleArea = calculateTriangleArea(base, height);
+        console.log("The area of the triangle is: " + triangleArea);
+
+        /*swapping variables */
+        function swap(a,b){
+            var temp = a;
+            a = b;
+            b = temp;
+            return [a,b]
+        }
+        var a = 10;
+        var b = 12;
+        console.log("Before swap: ","a =", a, "b =", b);
+
+        var swapped = swap(a, b);
+        a = swapped[0];
+        b = swapped[1];
+        console.log("After swap: ","a =", a, "b =", b);
+
+
+        /* km to miles */
+         function kmiles(km){
+            var miles = km*0.62137;
+            return miles
+
+         }
+         var km = 10
+         var miles = kmiles(km);
+         console.log(km + "  " + "kilometers is equal to  "+ miles +"miles")
+
+         /*celcius to Farenheit*/
+         function CToF(celsius) {
+        var fahrenheit = (celsius * 9/5) + 32;
+        return fahrenheit;
+        }
+        var celsius = 25;
+        var fahrenheit = CToF(celsius);
+        console.log(celsius + " degrees Celsius is equal to " + fahrenheit + " degrees Fahrenheit.");
+
+        /*calcuating are with PI constant*/
+        function circlearea(radius){
+            const PI = 3.14;
+            const area = PI* radius * radius;
+            return area;
+        }
+        var radius = 7;
+        var Carea = circlearea(radius);
+        console.log("The area of the circle is: " + Carea); 
+
+        /*Write to console*/
+        function ToConsole(message){
+            console.log(message)
+        }
+        var text = "Hi Writing to Console ";
+        var Con =  ToConsole(text);
+
+        /*Positive or Zero */
+        function checknumber(number){
+            if (number > 0) {
+                console.log("The Number is positive ");
+            }
+            else if (number <0) {
+                console.log("The Number is Negative ");   
+            }
+            else {
+                console.log("The Number is number is 0  ");
+            }
+        }
+        var number = 10;
+        checknumber(number)
+
+        /* Number is even or odd*/
+        function OddorEven(nunber){
+            if (number % 2==0){
+                console.log("The number is even ");
+            }
+            else {
+                console.log("The number is odd");
+            }
+
+        }
+        var number = 7;
+        OddorEven(number)
+        
+        /* Largest Number */
+        function findLargestNumber(num1, num2, num3){
+            var largestNumber = num1;
+            if (num2>largestNumber){
+                largestNumber= num2;
+            }
+            if (num3 > num2){
+                largestNumber= num3;
+            }
+            return largestNumber;
+        }
+        var num1 = 10;
+        var num2 = 12;
+        var num3 = 6;
+        var largest =  findLargestNumber(num1,num2,num3);
+        console.log("The largest number is: " + largest);
+
+
+        /*Prime Number */
+        function primenumber(number){
+            if (number<=1){
+                console.log("This Number is not prime");
+                return;
+            }
+            for (var i =2;i<=Math.sqrt(number);i++){
+                if (number %i ===0){
+                    console.log("the Number is not prime ");
+                    return;
+                }
+
+            }
+            console.log("the Number is primeNumber ")
+        }
+        var number = 13;
+        var f = primenumber(number );
+
+        /*print prime numbers between*/
+         function printPrmnbrs(start,end){
+            for (var number = start; number<=end;number++){
+                if (isPrime()){
+                    console.log(number);
+                }
+            }
+         }
+         function isPrime(number ){
+            if (number<=1){
+                return false;
+            }
+            for (var i =2;i<=Math.sqrt(number);i++){
+                if (number %i ===0){
+                    return false ;
+                }
+
+            }
+            return true;
+         }
+          var stnum = 12;
+          var endnum = 50;
+          console.log("Prime numbers between " + stnum + " and " + endnum + ":");
+          printPrmnbrs(stnum,endnum)
+
+
+          /*factorial */
+           function fact(number){
+            if (number ===0 || number ===1){
+                return 1;
+            }
+            var factorial = 1 ;
+            for (var i = 2; i <=number;i++){
+                factorial =factorial* i;
+
+            }
+            return factorial;
+
+           }
+           var num = 5;
+           var fina = fact(num)
+           console.log("The factorial of " + num + " is: " + fina);
+
+           /*fibanocci series*/
+           function printFibonacciSequence(n) {
+            var fibonacciSequence = [];
+            
+            if (n >= 1) {
+                fibonacciSequence.push(0);
+            }
+            
+            if (n >= 2) {
+                fibonacciSequence.push(1);
+            }
+            
+            for (var i = 2; i < n; i++) {
+                var nextNumber = fibonacciSequence[i - 1] + fibonacciSequence[i - 2];
+                fibonacciSequence.push(nextNumber);
+            }
+            
+            console.log(fibonacciSequence);
+            }
+
+            var length = 12;
+            console.log("Fibonacci sequence of length " + length + ":");
+            printFibonacciSequence(length);
+
+
+            /*calculator*/
+
+            function calculate(num1, num2, operator) {
+            var result;
+
+            switch (operator) {
+                case '+':
+                result = num1 + num2;
+                break;
+                case '-':
+                result = num1 - num2;
+                break;
+                case '*':
+                result = num1 * num2;
+                break;
+                case '/':
+                result = num1 / num2;
+                break;
+                default:
+                console.log("Invalid operator.");
+                return;
+            }
+
+            console.log("Result: " + result);
+            }
+
+            
+            var number1 = 120;
+            var number2 = 5;
+            var operation = '*';
+            calculate(number1, number2, operation);
+
+            /*HCF*/
+
+            function findHCF(num1, num2) {
+            if (num1 === 0 || num2 === 0) {
+                return 0;
+            }
+            
+            num1 = Math.abs(num1);
+            num2 = Math.abs(num2);
+            
+            while (num2 !== 0) {
+                var temp = num2;
+                num2 = num1 % num2;
+                num1 = temp;
+            }
+            
+            return num1;
+            }
+
+            var number1 = 24;
+            var number2 = 36;
+            var hcf = findHCF(number1, number2);
+            console.log("The HCF of " + number1 + " and " + number2 + " is: " + hcf);
+
+
+
+            /*LCM*/
+
+
+            function findLCM(num1, num2) {
+            var maxNum = Math.max(num1, num2);
+            var lcm = maxNum;
+
+            while (true) {
+                if (lcm % num1 === 0 && lcm % num2 === 0) {
+                break;
+                }
+                lcm += maxNum;
+            }
+
+            return lcm;
+            }
+
+            
+            var number1 = 13;
+            var number2 = 14;
+            var lcm = findLCM(number1, number2);
+            console.log("The LCM of " + number1 + " and " + number2 + " is: " + lcm);
+
+
+
+    </script>
+</body>
+</html>
